@@ -9,9 +9,6 @@ btnv.onclick = function(){
     let naz = document.getElementById("nfilm").value;
     let rok = document.getElementById("rokv").value;
     let her = document.getElementById("herci").value;
-    arr2.push( ' Názov filmu: ' + naz + ' Rok vydania: ' + rok + ' Herci: ' + her );
-    prvyzoznamf.push( ' Názov filmu: ' + naz + ' Rok vydania: ' + rok + ' Herci: ' + her );
-    console.log('******* Aktuálny zoznam filmov *******');
 
     function addp(prvyzoznamf)
     {
@@ -24,6 +21,9 @@ btnv.onclick = function(){
         document.getElementById("filmy").appendChild(par);
     }
     if(naz && her && rok != null || ""){
+        arr2.push( ' Názov filmu: ' + naz + ' Rok vydania: ' + rok + ' Herci: ' + her );
+        prvyzoznamf.push( ' Názov filmu: ' + naz + ' Rok vydania: ' + rok + ' Herci: ' + her );
+        console.log('******* Aktuálny zoznam filmov *******');
         prvyzoznamf.forEach(addp);
         document.forms[0].reset();
         console.log(arr2); 
