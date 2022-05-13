@@ -3,8 +3,8 @@ let arr2= [];
 
 
 let btnv = document.getElementById('vloz');
-btnv.onclick = function(event){
-    event.preventDefault()
+btnv.onclick = function(){
+    
     let prvyzoznamf = [];
     let naz = document.getElementById("nfilm").value;
     let rok = document.getElementById("rokv").value;
@@ -23,28 +23,12 @@ btnv.onclick = function(event){
         par.appendChild(document.createTextNode(' Herci: ' + her));
         document.getElementById("filmy").appendChild(par);
     }
-    prvyzoznamf.forEach(addp);
-    document.forms[0].reset();
-    console.log(arr2); 
-
-
-    //nefunguje zatial neviem prečo. Html validácia na form required nefunguje neviem prečo
-    function validateForm() {
-        let x = document.forms["folmular"]["film"].value.trim();
-        let b = document.forms["folmular"]["rok_vydania"].value.trim();
-        let c = document.forms["folmular"]["herci_"].value.trim();
-        if (x == null || x == "" ) {
-          alert("Polia musia byť vyplnené");
-          return false;
-        }else if( b == null || b == "" ){
-            alert("Polia musia byť vyplnené");
-          return false;
-        }else if( c == null || c == "" ){
-            alert("Polia musia byť vyplnené");
-          return false;
-        }
-        
+    if(naz && her && rok != null || ""){
+        prvyzoznamf.forEach(addp);
+        document.forms[0].reset();
+        console.log(arr2); 
     }
+    
     
 }
 
@@ -123,21 +107,6 @@ function validher(){
         H_name.style.color = "black";
     }
 }
-
-// function validateForm() {
-//     let b = document.forms["folmular"]["rok_vydania"].value;
-//     if (b == "") {
-//       alert("Name must be filled out");
-//       return false;
-//     }
-//   }
-// function validateForm() {
-//     let c = document.forms["folmular"]["herci_"].value;
-//     if (c == "") {
-//       alert("Name must be filled out");
-//       return false;
-//     }
-//   }
 
 
 
