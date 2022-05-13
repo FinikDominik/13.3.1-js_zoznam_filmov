@@ -10,7 +10,7 @@ btnv.onclick = function(){
     let rok = document.getElementById("rokv").value;
     let her = document.getElementById("herci").value;
 
-    function addp(prvyzoznamf)
+    function addp()
     {
         let par = document.createElement('p');
         par.setAttribute('style', 'border: 2px solid black');
